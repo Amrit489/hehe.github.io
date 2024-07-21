@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ff9a9e, #fecfef);
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .message-box {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .heart {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            transform: rotate(45deg);
+            animation: float 3s infinite ease-in-out;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                bottom: 0;
+                opacity: 1;
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button class="button" onclick="showMessage()">Happy Birthday Kritussss💋 click me</button>
+
+<div class="message-box" id="messageBox">
+    <p>My everything, My Kritika❤️🥺,</p>
+    <p>On this incredibly special day, I want to take a moment to let you know just how deeply and truly you mean to me🧿. Your presence in my life has been nothing short of a blessing, and every day I find myself falling more in love with you. Your smile lights up my world💫, your laughter is my favorite melody, and your love is the greatest gift I could ever ask for. 🌟❤️</p>
+    <p>When I think back on all the moments and fights we've shared, my heart swells with joy. Meri betu ho tm 🥺🌸🫂❤️ From our talks to everything🌻, every second spent with you has been a treasure. Your kindness, beauty, and strength inspire me every single day, and I am constantly in awe of the amazing person you are. 🌺💪</p>
+    <p>You have this incredible ability to make everything better❤️, just by being you. Your compassion, your empathy, and your unwavering support have been my rock in the toughest of times🥺. I feel so incredibly lucky to have you by my side, and I promise to always be there for you, just as you have been for me👉👈.</p>
+    <p>As you celebrate another year of your wonderful life, I wish you all the happiness, success, and love in the world🧿. May your dreams come true and may this year bring you endless joy and unforgettable moments. You deserve every bit of happiness that comes your way because you are truly one of a kind. ✨🎈</p>
+    <p>On this special day, I want you to know that you are loved more than words can express. Your smile is the light that guides me, your laughter is the joy that fills my heart, and your love is the foundation of our beautiful life together. I look forward to creating many more beautiful memories with you, sharing countless more laughs, and facing all of life's challenges hand in hand. 🥰💕</p>
+    <p>Thank you for being the incredible person you are and for filling my life with so much love and happiness. You have shown me what it means to truly love and be loved, and for that, I am eternally grateful. I look forward to spending the rest of my life with you, growing together, and making our dreams come true.</p>
+    <p>Happy Birthday, my love. Here's to you, today and always. May this day be as beautiful and as special as you are. 🥂🎁</p>
+    <p>With all my love,<br>Only and forever yours,<br>Amrit</p>
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById('messageBox').style.display = 'block';
+        createHearts();
+    }
+
+    function createHearts() {
+        const heartContainer = document.createElement('div');
+        heartContainer.style.position = 'absolute';
+        heartContainer.style.width = '100%';
+        heartContainer.style.height = '100%';
+        heartContainer.style.top = 0;
+        heartContainer.style.left = 0;
+        heartContainer.style.pointerEvents = 'none';
+        document.body.appendChild(heartContainer);
+
+        for (let i = 0; i < 50; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${Math.random() * 2 + 3}s`;
+            heartContainer.appendChild(heart);
+        }
+    }
+</script>
+
+</body>
+</html>
